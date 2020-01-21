@@ -323,4 +323,8 @@
         main {
             width: 100% !important;
         }
+        .chat-header,
+        .chat-form {
+            width: 100% !important;
+        }
     }
