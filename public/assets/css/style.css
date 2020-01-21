@@ -315,3 +315,17 @@
             opacity: 0
         }
     }
+    
+    @media (max-width:767px) {
+        aside {
+            display: none;
+        }
+        main {
+            width: 100%;
+        }
+        .chat-header,
+        .chat-form {
+            position: static;
+            width: 100%;
+        }
+    }
