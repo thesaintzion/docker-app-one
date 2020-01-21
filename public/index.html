@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
+    <title>My Chat app</title>
+    <script src="http://localhost:3500/socket.io/socket.io.js"></script>
+
+</head>
+
+<body>
+    <div class="chat bg-white">
+        <div class="border clearfix">
+            <aside>
+                <div class="row no-gutters">
+                    <div class="bar-1 col-4 bg-primary text-center  pt-2 pb-4">
+
+                        <div class=" w-100 e-box text-center">
+                            <div class="p-4 e e-round">
+
+                            </div>
+                        </div>
+                        <div class=" w-100 e-box text-center">
+                            <div class="p-4 e e-round"> </div>
+                        </div>
+
+                        <div class=" w-100 e-box text-center">
+                            <div class="p-4 e e-round"> </div>
+                        </div>
+                        <div class="author-saint" title="This app was developed by Saint">
+
+                            <p>With <i class="fa fa-heart-o"></i><br> by <span>Saint</span> </p>
+                        </div>
+                    </div>
+                    <div class="bar-2 col-8 bg-light pb-4">
+                        <div class="bar-2-inner-con d-flex h-100 flex-column  mb-3">
+                            <div class="d-flex w-100 e-box">
+                                <div class="">
+                                    <div class="p-4 e e-round"> </div>
+                                </div>
+                                <div class=" w-100">
+                                    <div class="p-2 w-100 mt-2 e"> </div>
+                                    <div class="p-1 w-50 mt-2 e"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex w-100 e-box">
+                                <div class="">
+                                    <div class="p-4 e e-round"> </div>
+                                </div>
+                                <div class=" w-100">
+                                    <div class="p-2 w-100 mt-2 e"> </div>
+                                    <div class="p-1 w-50 mt-2 e"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex w-100 e-box">
+                                <div class="">
+                                    <div class="p-4 e e-round"> </div>
+                                </div>
+                                <div class=" w-100">
+                                    <div class="p-2 w-100 mt-2 e"> </div>
+                                    <div class="p-1 w-50 mt-2 e"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="d-flex w-100 e-box">
+                                <div class="">
+                                    <div class="p-4 e e-round"> </div>
+                                </div>
+                                <div class=" w-100">
+                                    <div class="p-2 w-100 mt-2 e"> </div>
+                                    <div class="p-1 w-50 mt-2 e"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- <div class="bar-3 col-9"> -->
+            <main>
+                <div class="chat-bg"></div>
+                <div class="container">
+                    <header class="chat-header p-3  ">
+                        <div class="d-flex justify-content-start" style="align-items: center;">
+                            <div>
+                                <div class="video_icon">
+                                    <a class="popup-video video_play_button ">
+                                        S
+                                    </a>
+                                </div>
+                            </div>
+
+                            <h6 class="pl-4">Solape <span class="typing-text">Typing...</span></h6>
+
+                        </div>
+
+                    </header>
+
+                    <div id="messages" class="chat-messages">
+                        <div class="row me justify-content-end">
+                            <div class=" col-11 chat-box ">
+                                <div class="chat-box-inner">
+                                    <h4>Saint Lion <span> Today, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Solape</p>
+                                        </div>
+                                    </div>
+                                    <span class="sent"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" you row">
+                            <div class=" col-11 chat-box">
+                                <div class="chat-box-inner">
+                                    <h4>Solape <span> 20/01/2020, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Saint, How are you doing? </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row me justify-content-end">
+                            <div class=" col-11 chat-box ">
+                                <div class="chat-box-inner">
+                                    <h4>Saint Lion <span> Today, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Solape</p>
+                                        </div>
+                                    </div>
+                                    <span class="sent"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" you row">
+                            <div class=" col-11 chat-box">
+                                <div class="chat-box-inner">
+                                    <h4>Solape <span> 20/01/2020, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Saint, How are you doing? </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row me justify-content-end">
+                            <div class=" col-11 chat-box ">
+                                <div class="chat-box-inner">
+                                    <h4>Saint Lion <span> Today, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Solape</p>
+                                        </div>
+                                    </div>
+                                    <span class="sent"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" you row">
+                            <div class=" col-11 chat-box">
+                                <div class="chat-box-inner">
+                                    <h4>Solape <span> 20/01/2020, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Saint, How are you doing? </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row me justify-content-end">
+                            <div class=" col-11 chat-box ">
+                                <div class="chat-box-inner">
+                                    <h4>Saint Lion <span> Today, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Solape</p>
+                                        </div>
+                                    </div>
+                                    <span class="sent"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" you row">
+                            <div class=" col-11 chat-box">
+                                <div class="chat-box-inner">
+                                    <h4>Solape <span> 20/01/2020, 01:10 am</span></h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p>Hello Saint, How are you doing? </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <form id="chat-form" class="chat-form">
+                        <div class="form-group m-0 d-flex w-100 px-3 pt-2 pb-3 ">
+                            <div class="flex-1  w-100">
+                                <input name="body" id="body" placeholder="type" class="form-control shadow-sm">
+
+                            </div>
+                            <div>
+                                <div class="icon-con">
+                                    <a class="icon-button ">
+                                        <i class="fa fa-apple"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="icon-con">
+                                    <a class="icon-button ">
+                                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <input name="name" id="name" placeholder="name" class="form-control shadow-sm w-50 mb-2 mx-auto">
+                                <input name="body" id="body" placeholder="type" class="form-control shadow-sm w-100"> -->
