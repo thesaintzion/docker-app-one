@@ -318,14 +318,9 @@
     
     @media (max-width:767px) {
         aside {
-            display: none;
+            display: none !important;
         }
         main {
-            width: 100%;
-        }
-        .chat-header,
-        .chat-form {
-            position: static;
-            width: 100%;
+            width: 100% !important;
         }
     }
