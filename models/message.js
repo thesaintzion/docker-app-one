@@ -6,6 +6,8 @@ const messagesSchema = new Schema({
     message: { type: Array },
     userName: { type: String },
     userId: { type: String },
+    sender: { type: String },
+    reciever: { type: String }
 
 });
 module.exports = mongoose.model('Message', messagesSchema);
