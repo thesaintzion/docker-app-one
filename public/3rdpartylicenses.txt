@@ -87,6 +87,8 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/material/core
 
 @angular/material/dialog
@@ -99,7 +101,11 @@ THE SOFTWARE.
 
 @angular/material/menu
 
+@angular/material/sidenav
+
 @angular/material/snack-bar
+
+@angular/material/toolbar
 
 @angular/material/tooltip
 
