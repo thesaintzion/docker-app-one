@@ -14,11 +14,12 @@ const PrivateMessage2 = require('./models/private_messages2');
 
 
 // DB connection
-let mainDb = process.env.MONGO_URL;
+// let mainDb = process.env.MONGO_URL;
+let mainDb = process.env.MONGO_DEV_URL;
 if (process.env.NODE_ENV !== 'production') {
     const morgan = require('morgan');
     app.use(morgan('short'));
-    mainDb = process.env.MONGO_DEV_URL;
+    // mainDb = process.env.MONGO_DEV_URL;
 }
 
 app.use(express.json());
@@ -142,9 +143,18 @@ const saintCreateRoom = (sender, reciever, message) => {
 
 }
 
-saintCreateRoom('emma', 'chi', 'Hi Chizoba, How are you doing');
 
 
+// saintCreateRoom('emma', 'chi', 'Hi Chizoba, How are you doing');
+
+const showRooms = () => {
+    PrivateMessage2.find({}).then(rooms => {
+        console.log(rooms);
+    }).catch(err => {
+        console.log(err);
+    });
+}
+showRooms();
 
 // message: [{
 //     user: String,

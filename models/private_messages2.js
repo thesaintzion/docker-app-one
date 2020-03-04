@@ -5,7 +5,11 @@ const privateMessagesSchema2 = new Schema({
     owner: { type: String },
     member: { type: String },
     message: [{
-        user: String,
+        uid: String,
+        firstname: String,
+        lastname: String,
+        img: String,
+        type: String,
         body: String,
         status: { type: Boolean, default: true },
         createdAt: { type: Date, default: Date.now },
