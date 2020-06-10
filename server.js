@@ -71,13 +71,16 @@ const io = socket(server);
 app.set('io', io);
 var users = [];
 var clients = 0;
+
 io.on('connection', function(socket) {
     // socketHandler(socket);
     clients++;
 
     socket.emit('online', 'Online');
+
     socket.emit('connection', 'Connected');
 
+    // 
     socket.on("user_loggedin", function(user) {
 
         users[user.id] = socket.id;
@@ -85,6 +88,7 @@ io.on('connection', function(socket) {
 
         console.log(user, socket.id, users, users[socket.id])
     });
+    // 
 
 
 
@@ -148,13 +152,13 @@ const saintCreateRoom = (sender, reciever, message) => {
 // saintCreateRoom('emma', 'chi', 'Hi Chizoba, How are you doing');
 
 const showRooms = () => {
-    PrivateMessage2.find({}).then(rooms => {
-        console.log(rooms);
-    }).catch(err => {
-        console.log(err);
-    });
-}
-showRooms();
+        PrivateMessage2.find({}).then(rooms => {
+            console.log(rooms);
+        }).catch(err => {
+            console.log(err);
+        });
+    }
+    // showRooms();
 
 // message: [{
 //     user: String,
